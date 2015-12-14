@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+
+  "name": "YouTube Ad Mute & Skip",
+  "description": "This extension auto-mutes YouTube ads when they come on until the real video starts playing and also skips the ad if it can.",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "tabs"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["jquery.js", "content.js"]
+    }
+  ],
+   "background": {
+    "scripts": ["background.js"]
+  }
+}
